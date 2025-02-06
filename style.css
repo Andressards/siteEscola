@@ -1,0 +1,409 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #FFD700;
+    padding-top: 70px; /* Evita que o conteúdo fique escondido sob o cabeçalho */
+}
+header {
+    position: fixed; /* Mantém o cabeçalho fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000; /* Mantém o fundo do cabeçalho visível */
+    color: #FFD700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+.logo img {
+    width: 80px; /* Define a largura fixa */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+.hero img {
+    width: 100%; /* Faz a imagem ocupar toda a largura da tela */
+    height: 400px; /* Ajuste conforme necessário */
+    object-fit: cover; /* Mantém a proporção da imagem sem distorção */
+    display: block;
+}
+
+.hero-container {
+    position: relative; /* Define um contexto para o posicionamento absoluto */
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-button {
+    position: absolute;
+    left: 50%;
+    bottom: 20px; /* Ajuste conforme necessário */
+    transform: translateX(-50%); /* Centraliza o botão horizontalmente */
+    background-color: #FFD700;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.impacto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d8b802;
+    padding: 40px;
+    gap: 20px; /* Adiciona espaçamento entre os cards */
+}
+
+.texto-impacto {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adiciona espaçamento entre os cards */
+    width: 100%;
+}
+
+.impacto-missao, .impacto-visao, .impacto-valores {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Ajuste para a largura do card */
+}
+
+.impacto-missao h1, .impacto-visao h1, .impacto-valores h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.impacto-missao p, .impacto-visao p, .impacto-valores ul {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.impacto-valores ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.hero-button:hover {
+    background-color: #FFD700;
+}
+
+.imagem-impacto img {
+    max-width: 60%;
+    height: auto;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.nav-links li a {
+    color: #FFD700;
+    text-decoration: none;
+}
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+.hero {
+    text-align: center;
+    padding: 50px;
+}
+.btn {
+    background-color: #FFD700;
+    padding: 10px 20px;
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.section {
+    padding: 40px;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+input, textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+button {
+    background-color: #FFD700;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.carrossel {
+    width: 100%; /* Ajuste conforme necessário */
+    max-width: 600px; /* Defina um tamanho fixo para o carrossel */
+    overflow: hidden; /* Esconde as imagens que ficam fora da área visível */
+    position: relative;
+}
+
+.carrossel-imagens {
+    display: flex;
+    animation: slide 12s infinite; /* A animação vai durar 12 segundos e será infinita */
+}
+
+.carrossel-imagens img {
+    width: 100%; /* Cada imagem ocupa 100% do espaço visível */
+    height: auto;
+    flex-shrink: 0; /* Impede que as imagens encolham */
+    transition: transform 1s ease-in-out; /* Suaviza a transição da imagem */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Primeira imagem visível */
+    }
+    25% {
+        transform: translateX(-100%); /* Segunda imagem visível */
+    }
+    50% {
+        transform: translateX(-200%); /* Terceira imagem visível */
+    }
+    75% {
+        transform: translateX(-300%); /* Quarta imagem visível */
+    }
+    100% {
+        transform: translateX(0); /* Retorna para a primeira imagem */
+    }
+}
+
+.historia-carrossel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    padding: 40px;
+    gap: 20px; /* Adiciona espaçamento entre os cards */
+}
+
+.historia-texto {
+    background-color: transparent; /* Remove a caixa colorida */
+    color: #ffffff; /* Texto branco para contraste */
+    text-align: center;
+    padding: 40px;
+}
+
+.historia-texto h1 {
+    font-size: 66px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #FFD700; /* Amarelo para dar destaque */
+}
+
+.historia-texto p {
+    font-size: 22px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #FFD700; /* Amarelo para chamar atenção */
+    color: #000000; /* Preto para contraste */
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #ffffff; /* Branco ao passar o mouse */
+    color: #000000;
+}
+
+
+
+#nossa-historia {
+    background-color: #000000; /* Fundo preto elegante */
+    color: #ffffff; /* Texto branco para contraste */
+    padding: 60px 10%;
+    text-align: justify;
+    border-left: 5px solid #FFD700; /* Linha dourada na lateral */
+}
+
+#nossa-historia h1 {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #FFD700; /* Dourado para destaque */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Espaçamento para deixar sofisticado */
+}
+
+#nossa-historia p {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* Efeito sutil ao passar o mouse na seção */
+#nossa-historia:hover {
+    background-color: #111111; /* Fundo ligeiramente mais claro */
+    transition: 0.3s ease-in-out;
+}
+
+
+.section {
+    text-align: center;
+    padding: 60px 10%;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.section h2 {
+    font-size: 50px;
+    color: #FFD700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 40px;
+}
+
+.cursos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.curso-card {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.curso-card:hover {
+    transform: scale(1.05);
+}
+
+.curso-card h3 {
+    font-size: 24px;
+    color: #FFD700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+
+.curso-card p {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    background-color: #FFD700;
+    color: #000000;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+.rodape {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.rodape-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.rodape-info,
+.rodape-redes {
+    flex: 1;
+    min-width: 250px;
+}
+
+.rodape-info h3,
+.rodape-redes h3 {
+    font-size: 24px;
+    color: #FFD700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+}
+
+.rodape-info p {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.redes-sociais a {
+    color: #FFD700;
+    font-size: 28px;
+    transition: 0.3s;
+}
+
+.redes-sociais a:hover {
+    color: #ffffff;
+}
+
+.rodape-direitos {
+    margin-top: 20px;
+    border-top: 1px solid #FFD700;
+    padding-top: 15px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
